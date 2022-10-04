@@ -1,4 +1,6 @@
 
+#Introducir mensaje a descifrar:
+
 mensaje = """RIJ AZKKZHC PIKCE XT ACKCUXJHX SZX, E NZ PEJXKE, PXGIK XFDKXNEQE RIPI RIPQEHCK ET OENRCNPI AXNAX ZJ RKCHXKCI AX CJAXDXJAXJRCE
 AX RTENX, E ACOXKXJRCE AXT RITEQIKERCIJCNPI OKXJHXDIDZTCNHE AX TE ACKXRRCIJ EJEKSZCNHE.
 AZKKZHC OZX ZJ OERHIK AX DKCPXK IKAXJ XJ XT DEDXT AX TE RTENX IQKXKE XJ REHETZJVE XJ GZTCI AX 1936. DXKI AZKKZHC, RIPI IRZKKX RIJ
@@ -23,6 +25,7 @@ letras = {'A':0,
 	  'L':0,
 	  'M':0,
 	  'N':0,
+	  'Ñ':0,
 	  'O':0,
 	  'P':0,
 	  'Q':0,
@@ -35,7 +38,7 @@ letras = {'A':0,
 	  'X':0,
 	  'Y':0,
 	  'Z':0,
-	  'v':0}
+	  }
 cont = 0
 
 for caracter in mensaje:
@@ -45,10 +48,11 @@ for caracter in mensaje:
          letras[caracter] += 1 # suma uno cada vez que coincida una letra
          cont += 1  
 
-print(letras)
+letrasOrd = sorted(letras.items(),key=lambda x: x[1], reverse=True)
+print(letrasOrd)
 print("En este texto hay " +  str(cont)  + " letras \n")
 
-# Anadir cambios al texto en base a las frecuencias 
+# Se van cambiando las letras del mensaje en base a las frecuencias obtenidas
 
 cambio = mensaje.replace("X","e")
 cambio = cambio.replace("A","d")

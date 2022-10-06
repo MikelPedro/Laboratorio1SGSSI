@@ -3,7 +3,7 @@
 
 #Introducir mensaje a descifrar:
 
-print("Introduce el mensaje cifrado")
+print("Introduce el mensaje cifrado (Asegurese que el mensaje entero esté seguido, es decir sin puntos y a parte):")
 mensaje =  input()
 
 letras = {'A':0,
